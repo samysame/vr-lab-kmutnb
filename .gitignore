@@ -1,0 +1,57 @@
+# ==========================
+# .gitignore pour projet Unity
+# ==========================
+
+# Dossiers générés automatiquement par Unity (NE JAMAIS versionner)
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]serSettings/
+[Mm]emoryCaptures/
+
+# Fichiers de cache/build spécifiques
+[Aa]ssets/AssetStoreTools*
+.vs/
+.vscode/
+.idea/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Fichiers spécifiques Unity
+sysinfo.txt
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# Crashlytics generated file
+crashlytics-build.properties
+
+# Packages (le dossier Packages/ lui-même reste versionné,
+# mais pas les caches de résolution)
+[Pp]ackages/*
+!Packages/manifest.json
+!Packages/packages-lock.json
+
+# UpgradeLog (rapport de mise à niveau Unity)
+UpgradeLog*.htm
+UpgradeLog*.html
+
+# Fichiers OS
+.DS_Store
+Thumbs.db
