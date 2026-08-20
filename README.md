@@ -35,6 +35,8 @@ Assets/
 - [Unity Hub](https://unity.com/download) with Unity **6000.5.0f1** (or a compatible version) installed
 - [Git](https://git-scm.com/) and [Git LFS](https://git-lfs.github.com/) installed
 - A VR headset compatible with OpenXR (Meta Quest, Valve Index, HTC Vive, etc.) with its runtime installed
+
+Follow the [Meta Horizon tutorial](https://developers.meta.com/horizon/documentation/unity/unity-tutorial-hello-vr/) for a thorough setup of your environment.  
   
 ### Clone the project
 
