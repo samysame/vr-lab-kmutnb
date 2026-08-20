@@ -104,7 +104,31 @@ source /path/to/the/repo/aliases.sh
 This project is worked on from multiple machines (on-site/remote). To avoid conflicts:
 - **Before starting work**: `git pull`
 - **Before switching machines**: commit + `git push`, even for unfinished work (`git commit -m "wip: ..."`)
-- 
+
+### Branching strategy
+
+Work is done on feature branches, not directly on `main`. `main` should always stay in a clean, working state.
+
+```bash
+git checkout -b feature/my-feature   # Create and switch to a new branch
+# ... work, commit ...
+git push -u origin feature/my-feature
+```
+
+Once the feature is ready, open a Pull Request on GitHub to merge it into `main`. This allows for review before integration and avoids conflicts piling up directly on the main branch. Delete the branch once it's merged to keep things tidy.
+
+### Useful Git commands
+```bash
+git commit --amend             # Modify the most recent commit
+git pull --rebase origin main  # Update your branch with remote changes, keeping a clean history
+git restore <file>             # Discard changes in your working directory
+git reset HEAD^                # Undo the last commit, keeping your files
+git log                        # View the history of commits on the current branch
+git diff                       # See unstaged changes
+git stash                      # Stash modified tracked files out of the way
+git stash pop                  # Restore your most recently stashed changes
+```
+
 ### Important Unity settings (check on each machine)
 
 - `Edit > Project Settings > Editor > Asset Serialization` → **Force Text**
@@ -115,7 +139,7 @@ These settings ensure scenes/prefabs stay readable in Git diffs (text YAML forma
 
 - Large files (`.fbx`, `.png`, `.psd`, `.wav`, `.mp4`, etc.) are handled via **Git LFS** — see `.gitattributes` for the full list of tracked extensions.
 - `Library/`, `Logs/`, `Temp/`, `obj/`, `UserSettings/` are excluded from versioning (`.gitignore`) since Unity regenerates them automatically.
-- 
+
 ## Roadmap
 
 - [x] Project cleanup and structuring
