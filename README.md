@@ -75,6 +75,13 @@ Verify it's configured correctly:
 git config --local --get merge.unityyamlmerge.driver
 ```
 
+### Important Unity settings (check on each machine)
+
+- `Edit > Project Settings > Editor > Asset Serialization` → **Force Text**
+- `Edit > Project Settings > Editor > Version Control` → **Visible Meta Files**
+These settings ensure scenes/prefabs stay readable in Git diffs (text YAML format rather than binary).
+
+
 ### (Optional) Aliases (`aliases.sh`)
 
 The repo contains an `aliases.sh` file with a few handy aliases for this project.
@@ -114,12 +121,22 @@ This project is worked on from multiple machines (on-site/remote). To avoid conf
 Work is done on feature branches, not directly on `main`. `main` should always stay in a clean, working state.
 
 ```bash
-git checkout -b feature/my-feature   # Create and switch to a new branch
+git checkout -b feat/my-feature   # Create and switch to a new branch
 # ... work, commit ...
-git push -u origin feature/my-feature
+git push -u origin feat/my-feature
 ```
 
 Once the feature is ready, open a Pull Request on GitHub to merge it into `main`. This allows for review before integration and avoids conflicts piling up directly on the main branch. Delete the branch once it's merged to keep things tidy.
+
+### Conventional branch naming
+
+Purpose Prefixes — describe the intent of the work:
+
+- `feature/` (or `feat/`): For new features (e.g., feature/add-login-page, feat/add-login-page)
+- `bugfix/` (or `fix/`): For bug fixes (e.g., bugfix/fix-header-bug, fix/header-bug)
+- `hotfix/`: For urgent fixes (e.g., hotfix/security-patch)
+- `release/`: For branches preparing a release (e.g., release/v1.2.0)
+- `chore/`: For non-code tasks like dependency, docs updates (e.g., chore/update-dependencies)
 
 ### Useful Git commands
 ```bash
@@ -132,12 +149,6 @@ git diff                       # See unstaged changes
 git stash                      # Stash modified tracked files out of the way
 git stash pop                  # Restore your most recently stashed changes
 ```
-
-### Important Unity settings (check on each machine)
-
-- `Edit > Project Settings > Editor > Asset Serialization` → **Force Text**
-- `Edit > Project Settings > Editor > Version Control` → **Visible Meta Files**
-These settings ensure scenes/prefabs stay readable in Git diffs (text YAML format rather than binary).
 
 ## Notes
 
