@@ -1,19 +1,19 @@
 # VR Lab — KMUTNB
 
-Expérience VR d'un laboratoire (électronique/sciences), développée sous Unity, avec pour objectif de reproduire un environnement de labo interactif en réalité virtuelle.
+VR experience of a laboratory (electronics/science), developed in Unity, aiming to recreate an interactive lab environment in virtual reality.
 
-## 🎮 Aperçu
+## Overview
 
-Ce projet recrée un laboratoire (tables, instruments, équipements) dans un environnement 3D, avec pour objectif d'y intégrer des interactions VR (préhension d'objets, déplacement, manipulation d'instruments).
+This project recreates a laboratory (tables, instruments, equipment) in a 3D environment, with the goal of integrating VR interactions (grabbing objects, moving around, manipulating instruments).
 
-## 🛠️ Stack technique
+## Tech stack
 
-- **Moteur** : Unity 6 (6000.5.0f1)
-- **VR** : OpenXR + XR Interaction Toolkit
-- **Rendu** : Universal Render Pipeline (URP)
-- **Versioning** : Git + Git LFS
-
-## 📁 Structure du projet
+- **Engine**: Unity 6 (6000.5.0f1)
+- **VR**: OpenXR + XR Interaction Toolkit
+- **Rendering**: Universal Render Pipeline (URP)
+- **Versioning**: Git + Git LFS
+  
+##  Project structure
 
 ```
 Assets/
@@ -24,63 +24,103 @@ Assets/
 ├── Models/
 ├── XR/
 ├── XRI/                # XR Interaction Toolkit (package/samples)
-├── TextMesh Pro/        # Package externe
-└── ...                  # Autres dossiers de packages importés
+├── TextMesh Pro/        # External package
+└── ...                  # Other imported package folders
 ```
 
-Le préfixe `_Project/` regroupe tout le contenu créé pour ce projet, séparé des packages/imports externes, et remonte toujours en haut de la liste (tri alphabétique) pour faciliter la navigation.
+## Setup / Installation
 
-## 🚀 Setup / Installation
+### Prerequisites
 
-### Prérequis
-- [Unity Hub](https://unity.com/download) avec Unity **6000.5.0f1** (ou version compatible) installé
-- [Git](https://git-scm.com/) et [Git LFS](https://git-lfs.github.com/) installés
-- Un casque VR compatible OpenXR (Meta Quest, Valve Index, HTC Vive, etc.) et son runtime installé
-
-### Cloner le projet
+- [Unity Hub](https://unity.com/download) with Unity **6000.5.0f1** (or a compatible version) installed
+- [Git](https://git-scm.com/) and [Git LFS](https://git-lfs.github.com/) installed
+- A VR headset compatible with OpenXR (Meta Quest, Valve Index, HTC Vive, etc.) with its runtime installed
+  
+### Clone the project
 
 ```bash
 git lfs install
 git clone git@github.com:samysame/vr-lab-kmutnb.git
 ```
+> Make sure Git LFS is installed **before** cloning, otherwise large files (3D models, textures) won't be retrieved correctly.
 
-> ⚠️ Assure-toi que Git LFS est installé **avant** de cloner, sinon les fichiers volumineux (modèles 3D, textures) ne seront pas récupérés correctement.
+### Open in Unity
 
-### Ouvrir dans Unity
+1. Open **Unity Hub**
+2. Click **Add** > select the cloned project folder
+3. Open the project with the Unity version indicated above
+4. Let Unity reimport all assets (can take several minutes on first launch)
+   
+### Configure UnityYAMLMerge (once per machine)
 
-1. Ouvre **Unity Hub**
-2. Clique sur **Add** > sélectionne le dossier du projet cloné
-3. Ouvre le projet avec la version Unity indiquée ci-dessus
-4. Laisse Unity réimporter tous les assets (peut prendre plusieurs minutes au premier lancement)
+This project uses `UnityYAMLMerge` to intelligently merge `.unity` (scene) and `.prefab` files in case of a Git conflict, rather than a classic text merge that can corrupt these files.
 
-## 🔄 Workflow Git (multi-postes)
+This configuration is not propagated automatically via `git pull`/`git clone` (it depends on Unity's install path on each machine). After cloning the repo, run the script matching your OS once:
 
-Ce projet est travaillé depuis plusieurs machines (présentiel/distanciel). Pour éviter les conflits :
+**Windows**
+```cmd
+setup-git-merge.bat
+```
 
-- **Avant de commencer à travailler** : `git pull`
-- **Avant de changer de machine** : commit + `git push`, même en travail non terminé (`git commit -m "wip: ..."`)
+**macOS / Linux / Git Bash**
+```bash
+chmod +x setup-git-merge.sh
+./setup-git-merge.sh
+```
 
-### Paramètres Unity importants (à vérifier sur chaque poste)
+Verify it's configured correctly:
+```bash
+git config --local --get merge.unityyamlmerge.driver
+```
+
+### (Optional) Aliases (`aliases.sh`)
+
+The repo contains an `aliases.sh` file with a few handy aliases for this project.
+
+#### Installation
+
+```bash
+source aliases.sh
+```
+
+To load them automatically on every new session, add this line to the end of your `~/.bashrc` (or `~/.zshrc`):
+```bash
+source /path/to/the/repo/aliases.sh
+```
+
+#### Available aliases
+
+| Alias | Command |
+|-------|---------|
+| `gst` | `git status`   |
+| `gco` | `git checkout`   |
+| `gcob` | `git checkout -b`   |
+| `gbr` | `git branch`   |
+| `gcm` | `git commit -m`   |
+| `gad` | `git add`   |
+
+## Git workflow (multiple machines)
+
+This project is worked on from multiple machines (on-site/remote). To avoid conflicts:
+- **Before starting work**: `git pull`
+- **Before switching machines**: commit + `git push`, even for unfinished work (`git commit -m "wip: ..."`)
+- 
+### Important Unity settings (check on each machine)
 
 - `Edit > Project Settings > Editor > Asset Serialization` → **Force Text**
 - `Edit > Project Settings > Editor > Version Control` → **Visible Meta Files**
+These settings ensure scenes/prefabs stay readable in Git diffs (text YAML format rather than binary).
 
-Ces réglages garantissent que les scènes/prefabs restent lisibles en diff Git (format YAML texte plutôt que binaire).
+## Notes
 
-## 📝 Notes
+- Large files (`.fbx`, `.png`, `.psd`, `.wav`, `.mp4`, etc.) are handled via **Git LFS** — see `.gitattributes` for the full list of tracked extensions.
+- `Library/`, `Logs/`, `Temp/`, `obj/`, `UserSettings/` are excluded from versioning (`.gitignore`) since Unity regenerates them automatically.
+- 
+## Roadmap
 
-- Les gros fichiers (`.fbx`, `.png`, `.psd`, `.wav`, `.mp4`, etc.) sont gérés via **Git LFS** — voir `.gitattributes` pour la liste complète des extensions trackées.
-- `Library/`, `Logs/`, `Temp/`, `obj/`, `UserSettings/` sont exclus du versioning (`.gitignore`) car régénérés automatiquement par Unity.
-
-## 🗺️ Roadmap
-
-- [x] Nettoyage et structuration du projet
-- [x] Setup Git / Git LFS
-- [ ] Intégration XR Interaction Toolkit (caméra VR, contrôleurs)
-- [ ] Interactions avec les instruments du labo
-- [ ] Téléportation / déplacement en VR
-- [ ] UI en VR
-
-## 📄 Licence
-
-_À définir_
+- [x] Project cleanup and structuring
+- [x] Git / Git LFS setup
+- [ ] XR Interaction Toolkit integration (VR camera, controllers)
+- [ ] Interactions with lab instruments
+- [ ] VR teleportation / movement
+- [ ] VR UI
