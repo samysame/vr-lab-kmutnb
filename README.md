@@ -98,6 +98,8 @@ source /path/to/the/repo/aliases.sh
 | `gbr` | `git branch`   |
 | `gcm` | `git commit -m`   |
 | `gad` | `git add`   |
+| `gp` | `git push`   |
+| `gcp` | `git cherry-pick`   |
 
 ## Git workflow (multiple machines)
 
