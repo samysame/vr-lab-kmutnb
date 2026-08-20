@@ -13,6 +13,9 @@ alias gcob="git checkout -b"
 alias gbr="git branch"
 alias gcm="git commit -m"
 alias gad="git add"
+alias gp="git push"
+alias gcp="git cherry-pick"
+
 EOF
 
 source $BASHRC
