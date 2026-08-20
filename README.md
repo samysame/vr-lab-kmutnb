@@ -141,6 +141,7 @@ Purpose Prefixes — describe the intent of the work:
 ### Useful Git commands
 ```bash
 git commit --amend             # Modify the most recent commit
+git push --force-with-lease    # Force-push safely after a rebase/amend (fails if the remote has changes you don't have locally)
 git pull --rebase origin main  # Update your branch with remote changes, keeping a clean history
 git restore <file>             # Discard changes in your working directory
 git reset HEAD^                # Undo the last commit, keeping your files
