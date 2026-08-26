@@ -54,3 +54,7 @@ UpgradeLog*.html
 # OS files
 .DS_Store
 Thumbs.db
+
+Assets/XR/Settings/OpenXR Editor Settings.asset*
+*.slnx
+*.sln
