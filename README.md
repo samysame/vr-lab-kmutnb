@@ -156,6 +156,46 @@ git stash pop                  # Restore your most recently stashed changes
 - Large files (`.fbx`, `.png`, `.psd`, `.wav`, `.mp4`, etc.) are handled via **Git LFS** — see `.gitattributes` for the full list of tracked extensions.
 - `Library/`, `Logs/`, `Temp/`, `obj/`, `UserSettings/` are excluded from versioning (`.gitignore`) since Unity regenerates them automatically.
 
+### Git LFS — Large Files
+
+On 2026-08-28, several large files (`dg822 pro.fbx` ~65MB, `3DModel.jpg` ~50MB, `Lab.skp` ~5.8MB) had been committed as regular Git blobs instead of LFS pointers — most likely because `git lfs install` hadn't been run on the machine that originally pushed them, or because `.gitattributes` wasn't yet configured for these extensions at the time.
+
+**Fix applied:**
+```bash
+git lfs track "*.fbx" "*.jpg" "*.png" "*.skp"
+git lfs migrate import --include="*.fbx,*.jpg,*.png,*.skp" --include-ref=refs/heads/main
+git push --force origin main
+```
+
+This operation **rewrote the repo's history** (new commit hashes) to convert all affected blobs into LFS pointers, across the entire history — not just the latest commit.
+
+### If you had already cloned this repo before 2026-08-28
+
+Your local history no longer matches `origin/main`. To resync:
+
+```bash
+git fetch origin
+git reset --hard origin/main
+```
+
+This discards any uncommitted local changes — commit or stash your work first. Alternatively, the simplest fix is to re-clone the repo from scratch.
+
+### Checking that a file is properly tracked by LFS
+
+```bash
+git lfs ls-files
+```
+
+### Detecting untracked large binaries (run periodically)
+
+```bash
+git rev-list --objects --all | \
+  git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' | \
+  awk '$1=="blob" && $3 > 1000000 {print}'
+```
+
+If this command returns any results, a large file was committed without going through LFS — check `.gitattributes` and run `git lfs migrate import` again if needed.
+
 ## Roadmap
 
 - [x] Project cleanup and structuring
