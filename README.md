@@ -169,7 +169,7 @@ git push --force origin main
 
 This operation **rewrote the repo's history** (new commit hashes) to convert all affected blobs into LFS pointers, across the entire history — not just the latest commit.
 
-### If you had already cloned this repo before 2026-08-28
+#### If you had already cloned this repo before 2026-08-28
 
 Your local history no longer matches `origin/main`. To resync:
 
@@ -180,13 +180,13 @@ git reset --hard origin/main
 
 This discards any uncommitted local changes — commit or stash your work first. Alternatively, the simplest fix is to re-clone the repo from scratch.
 
-### Checking that a file is properly tracked by LFS
+#### Checking that a file is properly tracked by LFS
 
 ```bash
 git lfs ls-files
 ```
 
-### Detecting untracked large binaries (run periodically)
+#### Detecting untracked large binaries (run periodically)
 
 ```bash
 git rev-list --objects --all | \
@@ -195,6 +195,13 @@ git rev-list --objects --all | \
 ```
 
 If this command returns any results, a large file was committed without going through LFS — check `.gitattributes` and run `git lfs migrate import` again if needed.
+
+
+#### Git LFS Pull
+
+After a `git clone/pull` or `git lfs migrate`, large files (`.fbx`, `.jpg`, `.png`, `.skp`) may not downloaded as their actual binary content — Unity will only see small LFS pointer files instead of the real assets, which breaks imports and can cause "Missing Prefab" errors on objects like the Lab and DG822PRO models.
+Run `git lfs pull`.
+
 
 ## Roadmap
 
