@@ -58,7 +58,7 @@ error, `ngspice` is not on your `PATH` — fix that before continuing.
      ```
    Your terminal prompt should now be prefixed with `(.venv)`.
 
-   > When you're done working on the backend, run When you're done working on the backend, run ````bash deactivate``` to exit the virtual environment and return to your 
+   > When you're done working on the backend, run When you're done working on the backend, run ```deactivate``` to exit the virtual environment and return to your 
    > system's default Python.
 
 4. **Install the Python dependencies:**
