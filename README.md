@@ -12,18 +12,20 @@ This project recreates a laboratory (tables, instruments, equipment) in a 3D env
 - **VR**: OpenXR + XR Interaction Toolkit
 - **Rendering**: Universal Render Pipeline (URP)
 - **Versioning**: Git + Git LFS
+- **Simulation backend**: Python · FastAPI · ngspice (see `Backend/README.md`)
   
 ##  Project structure
 
 ```
 Assets/
+│── Backend/     # FastAPI + ngspice simulation service (see Backend/README.md)
 │── Scenes/
 ├── Scripts/
 ├── Prefabs/
 ├── Materials/
 ├── Models/
 ├── XR/
-├── XRI/                # XR Interaction Toolkit (package/samples)
+├── XRI/                 # XR Interaction Toolkit (package/samples)
 ├── TextMesh Pro/        # External package
 └── ...                  # Other imported package folders
 ```
@@ -35,6 +37,7 @@ Assets/
 - [Unity Hub](https://unity.com/download) with Unity **6000.5.0f1** (or a compatible version) installed
 - [Git](https://git-scm.com/) and [Git LFS](https://git-lfs.github.com/) installed
 - A VR headset compatible with OpenXR (Meta Quest, Valve Index, HTC Vive, etc.) with its runtime installed
+- Python 3.11+ and ngspice (for the simulation backend — see `Backend/README.md` for full setup)
 
 Follow the [Meta Horizon tutorial](https://developers.meta.com/horizon/documentation/unity/unity-tutorial-hello-vr/) for a thorough setup of your environment.  
   
@@ -51,6 +54,7 @@ git clone git@github.com:samysame/vr-lab-kmutnb.git
 > git lfs status
 > git lfs ls-files
 > ```
+
 ### Open in Unity
 
 1. Open **Unity Hub**
@@ -86,6 +90,9 @@ git config --local --get merge.unityyamlmerge.driver
 - `Edit > Project Settings > Editor > Version Control` → **Visible Meta Files**
 These settings ensure scenes/prefabs stay readable in Git diffs (text YAML format rather than binary).
 
+### Set up the simulation backend (once per machine)
+
+The circuit simulation logic runs as a separate local service, not inside Unity. See `Backend/README.md` for full setup instructions (Python venv, ngspice install, running the server).
 
 ### (Optional) Aliases (`aliases.sh`)
 
@@ -216,3 +223,4 @@ Run `git lfs pull`.
 - [ ] Interactions with lab instruments
 - [ ] VR teleportation / movement
 - [ ] VR UI
+- [ ] Simulation backend integration (Python/FastAPI/ngspice)
