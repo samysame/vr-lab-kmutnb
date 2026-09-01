@@ -18,7 +18,7 @@ This project recreates a laboratory (tables, instruments, equipment) in a 3D env
 
 ```
 Assets/
-│── Backend/     # FastAPI + ngspice simulation service (see Backend/README.md)
+│── Backend/             # FastAPI + ngspice simulation service (see Backend/README.md)
 │── Scenes/
 ├── Scripts/
 ├── Prefabs/
