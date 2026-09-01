@@ -58,3 +58,18 @@ Thumbs.db
 Assets/XR/Settings/OpenXR Editor Settings.asset*
 *.slnx
 *.sln
+
+# Python virtual environments - never commit these, they are machine-specific and can be several hundred MB
+# Recreate locally from requirements.txt instead (see README.md)
+.venv/
+venv/
+.conda/
+env/
+
+# Python bytecode cache
+__pycache__/
+*.pyc
+
+# Files generated at runtime by /simulate - not source, safe to delete
+circuit.cir
+outupt.txt
