@@ -45,7 +45,12 @@ git lfs install
 git clone git@github.com:samysame/vr-lab-kmutnb.git
 ```
 > Make sure Git LFS is installed **before** cloning, otherwise large files (3D models, textures) won't be retrieved correctly.
-
+> 
+> ```bash
+> git lfs version
+> git lfs status
+> git lfs ls-files
+> ```
 ### Open in Unity
 
 1. Open **Unity Hub**
