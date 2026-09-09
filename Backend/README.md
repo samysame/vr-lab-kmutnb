@@ -76,7 +76,7 @@ error, `ngspice` is not on your `PATH` — fix that before continuing.
 environment, warn you if ngspice isn't on `PATH`, and start the server, so you
 don't have to repeat the manual steps every session:
 
-- **Windows**: `start-backend.bat`
+- **Windows**: `.\start-backend.bat`
 - **macOS / Linux**: `./start-backend.sh`
 
   On macOS/Linux, the executable bit needs to be set once after cloning (Git
