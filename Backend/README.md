@@ -48,6 +48,10 @@ error, `ngspice` is not on your `PATH` — fix that before continuing.
      ```powershell
      .venv\Scripts\Activate.ps1
      ```
+
+     > If you get the error ```cannot be loaded because running scripts is disabled on this system```
+     > Open a PowerShell as admin and execute ```Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser```
+     
    - Windows (cmd.exe):
      ```cmd
      .venv\Scripts\activate.bat
