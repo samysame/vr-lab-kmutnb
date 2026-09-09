@@ -72,4 +72,4 @@ __pycache__/
 
 # Files generated at runtime by /simulate - not source, safe to delete
 circuit.cir
-outupt.txt
+output.txt
