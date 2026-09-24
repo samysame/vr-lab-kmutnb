@@ -970,7 +970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LitButton
   buttonId: on off counter
   emissionRenderer: {fileID: 325856088}
-  emissionSlotIndex: 0
+  emissionSlotIndex: 1
   emissionIntensityOn: 2
   emissionIntensityOff: 0
 --- !u!1 &329695583 stripped
@@ -1241,7 +1241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LitButton
   buttonId: wave arb
   emissionRenderer: {fileID: 426486832}
-  emissionSlotIndex: 0
+  emissionSlotIndex: 1
   emissionIntensityOn: 2
   emissionIntensityOff: 0
 --- !u!23 &426486832 stripped
@@ -1582,7 +1582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LitButton
   buttonId: wave ramp
   emissionRenderer: {fileID: 577002112}
-  emissionSlotIndex: 0
+  emissionSlotIndex: 1
   emissionIntensityOn: 2
   emissionIntensityOff: 0
 --- !u!23 &577002112 stripped
@@ -1630,7 +1630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LitButton
   buttonId: touch off
   emissionRenderer: {fileID: 580008026}
-  emissionSlotIndex: 0
+  emissionSlotIndex: 1
   emissionIntensityOn: 2
   emissionIntensityOff: 0
 --- !u!23 &580008026 stripped
@@ -1683,7 +1683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LitButton
   buttonId: button 1
   emissionRenderer: {fileID: 595828539}
-  emissionSlotIndex: 0
+  emissionSlotIndex: 1
   emissionIntensityOn: 2
   emissionIntensityOff: 0
 --- !u!1 &599947881
@@ -2119,7 +2119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LitButton
   buttonId: button counter
   emissionRenderer: {fileID: 889896636}
-  emissionSlotIndex: 0
+  emissionSlotIndex: 1
   emissionIntensityOn: 2
   emissionIntensityOff: 0
 --- !u!1 &967648277 stripped
@@ -2162,7 +2162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LitButton
   buttonId: wave sine
   emissionRenderer: {fileID: 967648284}
-  emissionSlotIndex: 0
+  emissionSlotIndex: 1
   emissionIntensityOn: 2
   emissionIntensityOff: 0
 --- !u!23 &967648284 stripped
@@ -2464,7 +2464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LitButton
   buttonId: wave puls
   emissionRenderer: {fileID: 1040139032}
-  emissionSlotIndex: 0
+  emissionSlotIndex: 1
   emissionIntensityOn: 2
   emissionIntensityOff: 0
 --- !u!23 &1040139032 stripped
@@ -2741,23 +2741,23 @@ PrefabInstance:
     - target: {fileID: 3267950878401895282, guid: 41cda25d56e87451e9519dbd6cfee914, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: -31338725206393966, guid: 41cda25d56e87451e9519dbd6cfee914, type: 3}
-    - target: {fileID: 3267950878401895282, guid: 41cda25d56e87451e9519dbd6cfee914, type: 3}
-      propertyPath: 'm_Materials.Array.data[1]'
-      value: 
       objectReference: {fileID: -6612905176106415889, guid: 41cda25d56e87451e9519dbd6cfee914, type: 3}
     - target: {fileID: 3267950878401895282, guid: 41cda25d56e87451e9519dbd6cfee914, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: -31338725206393966, guid: 41cda25d56e87451e9519dbd6cfee914, type: 3}
+    - target: {fileID: 3267950878401895282, guid: 41cda25d56e87451e9519dbd6cfee914, type: 3}
       propertyPath: 'm_Materials.Array.data[2]'
       value: 
-      objectReference: {fileID: -1267325896993163083, guid: 41cda25d56e87451e9519dbd6cfee914, type: 3}
+      objectReference: {fileID: 6133712870518801159, guid: 41cda25d56e87451e9519dbd6cfee914, type: 3}
     - target: {fileID: 7055382314732965798, guid: 41cda25d56e87451e9519dbd6cfee914, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
-      objectReference: {fileID: -1164388399636432736, guid: 41cda25d56e87451e9519dbd6cfee914, type: 3}
+      objectReference: {fileID: 593394977081861496, guid: 41cda25d56e87451e9519dbd6cfee914, type: 3}
     - target: {fileID: 7055382314732965798, guid: 41cda25d56e87451e9519dbd6cfee914, type: 3}
       propertyPath: 'm_Materials.Array.data[2]'
       value: 
-      objectReference: {fileID: 1667905015711443527, guid: 41cda25d56e87451e9519dbd6cfee914, type: 3}
+      objectReference: {fileID: 6133712870518801159, guid: 41cda25d56e87451e9519dbd6cfee914, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -3186,7 +3186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LitButton
   buttonId: wave square
   emissionRenderer: {fileID: 1192654188}
-  emissionSlotIndex: 0
+  emissionSlotIndex: 1
   emissionIntensityOn: 2
   emissionIntensityOff: 0
 --- !u!23 &1192654188 stripped
@@ -3355,7 +3355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LitButton
   buttonId: wave noise
   emissionRenderer: {fileID: 1228321949}
-  emissionSlotIndex: 0
+  emissionSlotIndex: 1
   emissionIntensityOn: 2
   emissionIntensityOff: 0
 --- !u!23 &1228321949 stripped
@@ -3793,7 +3793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LitButton
   buttonId: button 2
   emissionRenderer: {fileID: 1384596576}
-  emissionSlotIndex: 0
+  emissionSlotIndex: 1
   emissionIntensityOn: 2
   emissionIntensityOff: 0
 --- !u!1 &1389905402
@@ -3921,7 +3921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LitButton
   buttonId: on off 1
   emissionRenderer: {fileID: 1423026901}
-  emissionSlotIndex: 0
+  emissionSlotIndex: 1
   emissionIntensityOn: 2
   emissionIntensityOff: 0
 --- !u!1 &1451130777
@@ -4185,7 +4185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LitButton
   buttonId: on off 2
   emissionRenderer: {fileID: 1563446472}
-  emissionSlotIndex: 0
+  emissionSlotIndex: 1
   emissionIntensityOn: 2
   emissionIntensityOff: 0
 --- !u!1 &1585227022 stripped
@@ -4228,7 +4228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LitButton
   buttonId: trigger
   emissionRenderer: {fileID: 1585227029}
-  emissionSlotIndex: 0
+  emissionSlotIndex: 1
   emissionIntensityOn: 2
   emissionIntensityOff: 0
 --- !u!23 &1585227029 stripped
@@ -5081,7 +5081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LitButton
   buttonId: sweep
   emissionRenderer: {fileID: 1725747923}
-  emissionSlotIndex: 0
+  emissionSlotIndex: 1
   emissionIntensityOn: 2
   emissionIntensityOff: 0
 --- !u!23 &1725747923 stripped
@@ -5534,7 +5534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LitButton
   buttonId: mod
   emissionRenderer: {fileID: 1909990709}
-  emissionSlotIndex: 0
+  emissionSlotIndex: 1
   emissionIntensityOn: 2
   emissionIntensityOff: 0
 --- !u!23 &1909990709 stripped
@@ -6049,7 +6049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LitButton
   buttonId: burst
   emissionRenderer: {fileID: 2118537572}
-  emissionSlotIndex: 0
+  emissionSlotIndex: 1
   emissionIntensityOn: 2
   emissionIntensityOff: 0
 --- !u!1660057539 &9223372036854775807
